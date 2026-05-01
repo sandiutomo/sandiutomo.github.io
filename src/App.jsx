@@ -9,7 +9,7 @@ import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
 const name     = 'Sandi Utomo'
-const initials = 'S.U.'
+const initials = 'SU'
 const role     = 'Solutions Architect'
 const tagline  = 'I develop product and solutions that people actually want to use.'
 
@@ -24,37 +24,61 @@ const github   = 'https://github.com/sandiutomo'
 
 const jobs = [
   {
-    period:  '20XX – Present',
+    period:  '2024 – Present',
     role:    'Solutions Architect',
-    company: 'Company Name',
-    desc:    'Placeholder — update with your actual role and responsibilities.',
+    company: 'Merkle Indonesia (Part of Dentsu Group)',
+    desc:    'Designed scalable enterprise solutions while guiding executive stakeholders on investment priorities, platform choices, and delivery strategy.',
   },
   {
-    period:  '20XX – 20XX',
-    role:    'Previous Role',
-    company: 'Company Name',
-    desc:    'Placeholder — update with your actual role and responsibilities.',
+    period:  '2021 – 2024',
+    role:    'Lead, Analytics',
+    company: 'Merkle Indonesia (Part of Dentsu Group)',
+    desc:    'Combined partnership growth, client advisory, and analytics execution to secure 4 new logos, maintain ~85% YoY renewals, mentor 30+ team members, and deliver strong conversion improvements.',
   },
   {
-    period:  '20XX – 20XX',
-    role:    'Previous Role',
-    company: 'Company Name',
-    desc:    'Placeholder — update with your actual role and responsibilities.',
+    period:  '2019 – 2021',
+    role:    'Analytics Specialist',
+    company: 'iProspect Indonesia (Part of Dentsu Group)',
+    desc:    'Managed strategic analytics delivery across enterprise accounts, achieving ~95% client retention, strengthening data integrity by 40%, and driving ROI gains through attribution and monetization improvements.',
+  },
+  {
+  period:  '2017 – 2019',
+  role:    'Earlier Experience',
+  company: 'Various Companies',
+  desc:    'Built early career foundation across digital analytics, social media growth, and performance reporting, delivering multi-channel insights, GA implementations, and measurable audience acquisition gains.',
   },
 ]
 
 const skillCategories = [
   {
-    label: 'Strategy & Product',
-    items: ['Product Strategy', 'Solutions Design'],
+    label: 'Strategy & Architecture',
+    items: [
+      'Solution Architecture',
+      'Enterprise Solutions',
+      'Technology Strategy',
+      'Roadmapping',
+      'Stakeholder Management',
+    ],
+  },
+  {
+    label: 'Product & Growth',
+    items: [
+      'Product Strategy',
+      'Go-to-Market',
+      'Client Consulting',
+      'Business Growth',
+      'Pre-Sales',
+    ],
   },
   {
     label: 'Analytics & Data',
-    items: ['Data Analysis', 'Data Visualization', 'Analytics', 'Dashboarding'],
-  },
-  {
-    label: 'Marketing Technology',
-    items: ['Martech'],
+    items: [
+      'Digital Analytics',
+      'Data Analysis',
+      'Dashboarding',
+      'Data Visualization',
+      'Attribution',
+    ],
   },
 ]
 
