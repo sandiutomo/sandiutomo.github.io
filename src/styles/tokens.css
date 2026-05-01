@@ -1,0 +1,35 @@
+/* ============================================================
+   Design Tokens — adapted from Apple Design System
+   ============================================================ */
+
+:root {
+  /* ── Fonts ── */
+  --font-sans: -apple-system, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ── Colors: backgrounds ── */
+  --color-black:      #000000;
+  --color-gray-light: #f5f5f7;
+  --color-white:      #ffffff;
+  --color-near-black: #1d1d1f;
+
+  /* ── Colors: accent ── */
+  --color-apple-blue:  #0071e3;
+  --color-link-blue:   #0066cc;
+  --color-bright-blue: #2997ff; /* links on dark backgrounds */
+
+  /* ── Colors: dark surfaces ── */
+  --color-surface-dark-1: #272729;
+  --color-surface-dark-4: #2a2a2d;
+
+  /* ── Shadows ── */
+  --shadow-card: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
+
+  /* ── Border radius ── */
+  --radius-standard: 8px;
+  --radius-large:    12px;
+  --radius-pill:     980px;
+
+  /* ── Layout ── */
+  --content-max-width: 980px;
+  --nav-height: 48px;
+}
