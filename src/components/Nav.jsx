@@ -66,7 +66,9 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="nav__inner">
-        <a href="#" className="nav__brand" aria-label="Back to top">S.U.</a>
+        <a href="#" className="nav__brand" aria-label="Back to top">
+          <img src="/favicon.svg" alt="Sandi Utomo" width="28" height="28" />
+        </a>
 
         {/* Desktop links — dock magnification */}
         <nav

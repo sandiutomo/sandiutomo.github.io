@@ -33,13 +33,10 @@ export default function Contact({ email, linkedin, github }) {
             <MailIcon />
             {email}
           </a>
-        </div>
-
-        <div className="contact__social">
-          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="btn-pill-dark">
             <LinkedInIcon /> LinkedIn
           </a>
-          <a href={github} target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href={github} target="_blank" rel="noopener noreferrer" className="btn-pill-dark">
             <GitHubIcon /> GitHub
           </a>
         </div>
