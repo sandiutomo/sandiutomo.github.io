@@ -1,6 +1,7 @@
 /* Done when: glass blur visible, 3 links scroll sections, hamburger on <768px */
 import { useState, useEffect, useRef, useCallback } from 'react'
 
+
 const links = [
   { label: 'About',      href: '#about' },
   { label: 'Experience', href: '#experience' },
@@ -13,6 +14,7 @@ const links = [
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const [scales, setScales] = useState(links.map(() => 1))
+  const [activeHref, setActiveHref] = useState('')
   const linkRefs = useRef([])
 
   const handleDockMove = useCallback((e) => {
@@ -40,6 +42,21 @@ export default function Nav() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  /* Active section highlight via IntersectionObserver */
+  useEffect(() => {
+    const sections = links.map(l => document.querySelector(l.href))
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActiveHref('#' + entry.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+    )
+    sections.forEach(el => { if (el) observer.observe(el) })
+    return () => observer.disconnect()
+  }, [])
+
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -62,7 +79,7 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="nav__link"
+              className={`nav__link${activeHref === l.href ? ' nav__link--active' : ''}`}
               ref={el => { linkRefs.current[i] = el }}
               style={{ transform: `scale(${scales[i].toFixed(3)})` }}
             >

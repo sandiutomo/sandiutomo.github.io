@@ -184,6 +184,7 @@ section[id] { scroll-margin-top: var(--nav-height); }
   will-change: transform;
 }
 .nav__link:hover { color: #fff; }
+.nav__link--active { color: #fff; font-weight: 600; }
 .nav__hamburger {
   background: none;
   border: none;
