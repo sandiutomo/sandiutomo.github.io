@@ -2,9 +2,12 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { label: 'About',   href: '#about' },
-  { label: 'Works',   href: '#works' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About',      href: '#about' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'GitHub',     href: '#works' },
+  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Contact',    href: '#contact' },
 ]
 
 export default function Nav() {

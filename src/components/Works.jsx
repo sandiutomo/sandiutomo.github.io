@@ -3,7 +3,7 @@ export default function Works({ projects }) {
   return (
     <section id="works" className="works" aria-labelledby="works-heading">
       <div className="works__inner">
-        <h2 id="works-heading" className="section-heading">Works</h2>
+        <h2 id="works-heading" className="section-heading">GitHub Projects</h2>
         <div className="works__grid">
           {projects.map((p, i) => (
             <article key={i} className="project-card">
@@ -26,10 +26,10 @@ export default function Works({ projects }) {
                 <a
                   href={p.link}
                   className="project-card__link"
-                  aria-label={`View case study: ${p.title}`}
+                  aria-label={`View on GitHub: ${p.title}`}
                   {...(p.link !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
-                  View case study →
+                  View on GitHub →
                 </a>
               </div>
             </article>

@@ -1,5 +1,5 @@
 /* Done when: 2-col ≥768px, 1-col mobile, photo placeholder, bio, skill chips */
-export default function About({ bio, skills }) {
+export default function About({ bio }) {
   return (
     <section id="about" className="about" aria-labelledby="about-heading">
       <div className="about__inner">
@@ -16,12 +16,6 @@ export default function About({ bio, skills }) {
             {bio.map((para, i) => (
               <p key={i} className="about__bio">{para}</p>
             ))}
-            <p className="about__skills-label">Expertise</p>
-            <ul className="about__skills" aria-label="Skills">
-              {skills.map(s => (
-                <li key={s} className="skill-chip">{s}</li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>

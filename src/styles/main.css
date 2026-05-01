@@ -551,3 +551,141 @@ section[id] { scroll-margin-top: var(--nav-height); }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.experience {
+  background: var(--color-black);
+  padding: clamp(64px, 8vw, 100px) 24px;
+}
+.experience__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+.experience .section-heading {
+  color: #fff;
+  margin-bottom: 48px;
+}
+.experience__list {
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.experience__item {
+  position: relative;
+  padding-bottom: 40px;
+  padding-left: 24px;
+}
+.experience__item:last-child { padding-bottom: 0; }
+.experience__dot {
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-apple-blue);
+  border: 2px solid var(--color-black);
+  flex-shrink: 0;
+}
+.experience__period {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 6px;
+}
+.experience__role {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+.experience__company {
+  font-size: 15px;
+  color: var(--color-bright-blue);
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.experience__desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills {
+  background: var(--color-gray-light);
+  padding: clamp(64px, 8vw, 100px) 24px;
+}
+.skills__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+.skills .section-heading { color: var(--color-near-black); }
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+.skills__category-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.32);
+  margin-bottom: 14px;
+}
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+.skills__item {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.62);
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================================
+   CASE STUDIES
+   ============================================================ */
+.case-studies {
+  background: var(--color-near-black);
+  padding: clamp(64px, 8vw, 100px) 24px;
+}
+.case-studies__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+.case-studies .section-heading {
+  color: #fff;
+  margin-bottom: 48px;
+}
+.case-studies__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ============================================================
+   RESPONSIVE — skills + case-studies (768px+)
+   ============================================================ */
+@media (min-width: 768px) {
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+  .case-studies__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+}

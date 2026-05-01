@@ -1,11 +1,13 @@
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
+import Experience from './components/Experience.jsx'
+import Skills from './components/Skills.jsx'
 import Works from './components/Works.jsx'
+import CaseStudies from './components/CaseStudies.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
-/* ── Placeholder data — replace with your own ── */
 const name     = 'Sandi Utomo'
 const initials = 'S.U.'
 const role     = 'Solutions Architect'
@@ -20,9 +22,40 @@ const email    = 'hi.sandiutomo@gmail.com'
 const linkedin = 'https://linkedin.com/in/sandiutomo'
 const github   = 'https://github.com/sandiutomo'
 
-const skills = [
-  'Product Strategy', 'Solutions Design', 'Analytics', 'Martech',
-  'Data Analysis', 'Data Visualization', 'Dashboarding',
+const jobs = [
+  {
+    period:  '20XX – Present',
+    role:    'Solutions Architect',
+    company: 'Company Name',
+    desc:    'Placeholder — update with your actual role and responsibilities.',
+  },
+  {
+    period:  '20XX – 20XX',
+    role:    'Previous Role',
+    company: 'Company Name',
+    desc:    'Placeholder — update with your actual role and responsibilities.',
+  },
+  {
+    period:  '20XX – 20XX',
+    role:    'Previous Role',
+    company: 'Company Name',
+    desc:    'Placeholder — update with your actual role and responsibilities.',
+  },
+]
+
+const skillCategories = [
+  {
+    label: 'Strategy & Product',
+    items: ['Product Strategy', 'Solutions Design'],
+  },
+  {
+    label: 'Analytics & Data',
+    items: ['Data Analysis', 'Data Visualization', 'Analytics', 'Dashboarding'],
+  },
+  {
+    label: 'Marketing Technology',
+    items: ['Martech'],
+  },
 ]
 
 const projects = [
@@ -49,6 +82,23 @@ const projects = [
   },
 ]
 
+const caseStudies = [
+  {
+    title: 'Case Study Title',
+    desc:  'Placeholder — describe the problem, approach, and outcome. Update manually.',
+    tags:  ['Strategy', 'Analytics'],
+    link:  '#',
+    year:  '20XX',
+  },
+  {
+    title: 'Case Study Title',
+    desc:  'Placeholder — describe the problem, approach, and outcome. Update manually.',
+    tags:  ['Martech', 'Data'],
+    link:  '#',
+    year:  '20XX',
+  },
+]
+
 export default function App() {
   return (
     <>
@@ -56,8 +106,11 @@ export default function App() {
       <Nav />
       <main id="main-content">
         <Hero name={name} initials={initials} role={role} tagline={tagline} />
-        <About bio={bio} skills={skills} />
+        <About bio={bio} />
+        <Experience jobs={jobs} />
+        <Skills categories={skillCategories} />
         <Works projects={projects} />
+        <CaseStudies studies={caseStudies} />
         <Contact email={email} linkedin={linkedin} github={github} />
       </main>
       <Footer name={name} linkedin={linkedin} github={github} />
