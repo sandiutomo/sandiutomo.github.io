@@ -397,10 +397,19 @@ section[id] { scroll-margin-top: var(--nav-height); }
   margin: 0 auto;
 }
 .works .section-heading { margin-bottom: 48px; }
-.works__grid {
-  display: grid;
-  grid-template-columns: 1fr;
+.works__carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 20px;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.works__carousel::-webkit-scrollbar { display: none; }
+.works__carousel .project-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
 }
 .project-card {
   background: var(--color-surface-dark-1);
@@ -534,7 +543,7 @@ section[id] { scroll-margin-top: var(--nav-height); }
   display: flex;
   gap: 20px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 .footer__link {
@@ -573,7 +582,7 @@ section[id] { scroll-margin-top: var(--nav-height); }
   }
   .about__photo-wrap { max-width: 100%; margin: 0; }
 
-  .works__grid { grid-template-columns: repeat(2, 1fr); }
+  .works__carousel .project-card { flex: 0 0 360px; }
 
   .contact__ctas { flex-direction: row; justify-content: center; }
 
@@ -668,6 +677,12 @@ section[id] { scroll-margin-top: var(--nav-height); }
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
+.skills__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
 .skills__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -696,6 +711,31 @@ section[id] { scroll-margin-top: var(--nav-height); }
   font-weight: 500;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
+.skills__certs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.skills__cert-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-standard);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.skills__cert-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.72);
+}
+.skills__cert-issuer {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.38);
+  letter-spacing: 0.3px;
+}
 
 /* ============================================================
    CASE STUDIES
@@ -711,19 +751,26 @@ section[id] { scroll-margin-top: var(--nav-height); }
 .case-studies .section-heading {
   margin-bottom: 48px;
 }
-.case-studies__grid {
-  display: grid;
-  grid-template-columns: 1fr;
+.case-studies__carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 20px;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.case-studies__carousel::-webkit-scrollbar { display: none; }
+.case-studies__carousel .project-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
 }
 
 /* ============================================================
    RESPONSIVE — skills + case-studies (768px+)
    ============================================================ */
-@media (min-width: 768px) {
-  .skills__grid { grid-template-columns: repeat(2, 1fr); }
-  .case-studies__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1024px) {
-  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 767px) {
+  .skills__columns { grid-template-columns: 1fr; gap: 36px; }
+  .case-studies__carousel .project-card { flex: 0 0 calc(100vw - 48px); }
+  .works__carousel .project-card { flex: 0 0 calc(100vw - 48px); }
 }

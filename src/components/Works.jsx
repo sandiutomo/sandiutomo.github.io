@@ -4,7 +4,7 @@ export default function Works({ projects }) {
     <section id="works" className="works" aria-labelledby="works-heading">
       <div className="works__inner">
         <h2 id="works-heading" className="section-heading">GitHub Projects</h2>
-        <div className="works__grid">
+        <div className="works__carousel">
           {projects.map((p, i) => (
             <article key={i} className="project-card">
               {/* Image: replace with <img src={p.image} alt={p.title} loading="lazy" /> */}

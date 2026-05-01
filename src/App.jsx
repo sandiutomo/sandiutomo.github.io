@@ -137,7 +137,7 @@ export default function App() {
         <CaseStudies studies={caseStudies} />
         <Contact email={email} linkedin={linkedin} github={github} />
       </main>
-      <Footer name={name} linkedin={linkedin} github={github} />
+      <Footer name={name} email={email} linkedin={linkedin} github={github} />
     </>
   )
 }
