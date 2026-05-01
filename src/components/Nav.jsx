@@ -1,5 +1,5 @@
 /* Done when: glass blur visible, 3 links scroll sections, hamburger on <768px */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 const links = [
   { label: 'About',      href: '#about' },
@@ -12,6 +12,26 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [scales, setScales] = useState(links.map(() => 1))
+  const linkRefs = useRef([])
+
+  const handleDockMove = useCallback((e) => {
+    setScales(
+      linkRefs.current.map(el => {
+        if (!el) return 1
+        const rect = el.getBoundingClientRect()
+        const cx = rect.left + rect.width / 2
+        const dist = Math.abs(e.clientX - cx)
+        const range = 88
+        if (dist > range) return 1
+        return 1 + 0.45 * Math.pow(1 - dist / range, 1.5)
+      })
+    )
+  }, [])
+
+  const handleDockLeave = useCallback(() => {
+    setScales(links.map(() => 1))
+  }, [])
 
   /* Close mobile menu on resize to desktop */
   useEffect(() => {
@@ -31,10 +51,23 @@ export default function Nav() {
       <div className="nav__inner">
         <a href="#" className="nav__brand" aria-label="Back to top">S.U.</a>
 
-        {/* Desktop links */}
-        <nav className="nav__links" aria-label="Primary navigation">
-          {links.map(l => (
-            <a key={l.href} href={l.href} className="nav__link">{l.label}</a>
+        {/* Desktop links — dock magnification */}
+        <nav
+          className="nav__links"
+          aria-label="Primary navigation"
+          onMouseMove={handleDockMove}
+          onMouseLeave={handleDockLeave}
+        >
+          {links.map((l, i) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="nav__link"
+              ref={el => { linkRefs.current[i] = el }}
+              style={{ transform: `scale(${scales[i].toFixed(3)})` }}
+            >
+              {l.label}
+            </a>
           ))}
         </nav>
 

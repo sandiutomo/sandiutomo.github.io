@@ -4,8 +4,8 @@
 
 :root {
   /* ── Fonts ── */
-  --font-sans: -apple-system, 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-display: 'Syne', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 
   /* ── Colors: backgrounds ── */
   --color-black:      #000000;
