@@ -11,7 +11,7 @@ import Footer from './components/Footer.jsx'
 
 const name     = 'Sandi Utomo'
 const initials = 'SU'
-const role     = 'Analytics, Strategy & Solutions Leader'
+const role     = 'Analytics, Strategy & Solutions Consultant'
 const tagline  = 'I bridge business, data, and technology to build solutions that matter.'
 
 const bio = [
@@ -30,25 +30,29 @@ const jobs = [
     period:  '2024 – Present',
     role:    'Solutions Architect',
     company: 'Merkle Indonesia (Part of Dentsu Group)',
+    logo:    null, // drop logo to public/logos/merkle.svg then set: '/logos/merkle.svg'
     desc:    'Designed scalable enterprise solutions while guiding executive stakeholders on investment priorities, platform choices, and delivery strategy.',
   },
   {
     period:  '2021 – 2024',
     role:    'Lead, Analytics',
     company: 'Merkle Indonesia (Part of Dentsu Group)',
+    logo:    null, // same: '/logos/merkle.svg'
     desc:    'Combined partnership growth, client advisory, and analytics execution to secure 4 new logos, maintain ~85% YoY renewals, mentor 30+ team members, and deliver strong conversion improvements.',
   },
   {
     period:  '2019 – 2021',
     role:    'Analytics Specialist',
     company: 'iProspect Indonesia (Part of Dentsu Group)',
+    logo:    null, // drop logo to public/logos/iprospect.svg then set: '/logos/iprospect.svg'
     desc:    'Managed strategic analytics delivery across enterprise accounts, achieving ~95% client retention, strengthening data integrity by 40%, and driving ROI gains through attribution and monetization improvements.',
   },
   {
-  period:  '2017 – 2019',
-  role:    'Earlier Experience',
-  company: 'Various Companies',
-  desc:    'Built early career foundation across digital analytics, social media growth, and performance reporting, delivering multi-channel insights, GA implementations, and measurable audience acquisition gains.',
+    period:  '2017 – 2019',
+    role:    'Earlier Experience',
+    company: 'Various Companies',
+    logo:    null,
+    desc:    'Built early career foundation across digital analytics, social media growth, and performance reporting, delivering multi-channel insights, GA implementations, and measurable audience acquisition gains.',
   },
 ]
 
@@ -94,7 +98,7 @@ const projects = [
     tags:  ['Martech', 'Mobile', 'Analytics'],
     link:  'https://github.com/sandiutomo/firebraze-ios-swift',
     year:  '2026',
-    image: null, // drop file to public/projects/firebraze.jpg then set: '/projects/firebraze.jpg'
+    image: '/projects/placeholder-1.jpg',
   },
   {
     title: 'MarketApp | Analytics & Martech Sample App',
@@ -102,7 +106,7 @@ const projects = [
     tags:  ['Martech', 'Mobile', 'Analytics'],
     link:  'https://github.com/sandiutomo/marketapp-suite-android',
     year:  '2026',
-    image: null, // drop file to public/projects/marketapp.jpg then set: '/projects/marketapp.jpg'
+    image: '/projects/placeholder-2.jpg',
   },
   {
     title: 'Marketing Mix Model Studio',
@@ -110,7 +114,7 @@ const projects = [
     tags:  ['Marketing Mix Modeling', 'Analytics', 'Dashboard'],
     link:  'https://github.com/sandiutomo/marketingmixmodeling-meridian-demo',
     year:  '2026',
-    image: null, // drop file to public/projects/mmm.jpg then set: '/projects/mmm.jpg'
+    image: '/projects/placeholder-3.jpg',
   },
 ]
 

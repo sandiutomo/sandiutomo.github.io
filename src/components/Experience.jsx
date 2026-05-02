@@ -10,7 +10,17 @@ export default function Experience({ jobs }) {
               <div className="experience__content">
                 <p className="experience__period">{job.period}</p>
                 <p className="experience__role">{job.role}</p>
-                <p className="experience__company">{job.company}</p>
+                <div className="experience__company-row">
+                  {job.logo && (
+                    <img
+                      className="experience__company-logo"
+                      src={job.logo}
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span className="experience__company">{job.company}</span>
+                </div>
                 {job.desc && <p className="experience__desc">{job.desc}</p>}
               </div>
             </li>

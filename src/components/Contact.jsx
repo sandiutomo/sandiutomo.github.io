@@ -1,4 +1,3 @@
-/* Done when: email mailto + LinkedIn + GitHub links render, centered layout */
 const LinkedInIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -11,13 +10,6 @@ const GitHubIcon = () => (
   </svg>
 )
 
-const MailIcon = () => (
-  <svg width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true">
-    <rect x="0.75" y="0.75" width="13.5" height="10.5" rx="1.25" stroke="currentColor" strokeWidth="1.3"/>
-    <path d="M1 2l6.5 5L14 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-)
-
 export default function Contact({ email, linkedin, github }) {
   return (
     <section id="contact" className="contact" aria-labelledby="contact-heading">
@@ -25,18 +17,18 @@ export default function Contact({ email, linkedin, github }) {
         <h2 id="contact-heading" className="section-heading">Get in Touch</h2>
         <p className="contact__subtext">
           Open to new opportunities, collaborations, and interesting conversations.
-          Reach out through any channel below.
         </p>
 
-        <div className="contact__ctas">
-          <a href={`mailto:${email}`} className="btn-pill-dark">
-            <MailIcon />
-            {email}
-          </a>
-          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="btn-pill-dark">
+        <a href={`mailto:${email}`} className="contact__email">
+          {email}
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div className="contact__social">
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="contact__social-link">
             <LinkedInIcon /> LinkedIn
           </a>
-          <a href={github} target="_blank" rel="noopener noreferrer" className="btn-pill-dark">
+          <a href={github} target="_blank" rel="noopener noreferrer" className="contact__social-link">
             <GitHubIcon /> GitHub
           </a>
         </div>
