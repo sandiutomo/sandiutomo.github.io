@@ -1,15 +1,13 @@
-/* Done when: full-height dark, name/role/tagline visible, 2 CTAs, avatar placeholder */
-export default function Hero({ name, initials, role, tagline }) {
+export default function Hero({ name, role, tagline }) {
   return (
     <section id="hero" className="hero" aria-labelledby="hero-name">
       <div className="hero__inner">
-        {/* Avatar: replace aria-label text with img tag when you have a photo */}
         <div className="hero__avatar" aria-hidden="true">
-          {initials}
+          <img src="/initial-logo-liquid-glass-3.png" alt="" />
         </div>
 
-        <p className="hero__eyebrow">{role}</p>
         <h1 id="hero-name" className="hero__name">{name}</h1>
+        <p className="hero__eyebrow">{role}</p>
         <p className="hero__tagline">{tagline}</p>
 
         <div className="hero__ctas">

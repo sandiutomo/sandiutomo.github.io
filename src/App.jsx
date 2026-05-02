@@ -30,26 +30,26 @@ const jobs = [
     period:  '2024 – Present',
     role:    'Solutions Architect',
     company: 'Merkle Indonesia (Part of Dentsu Group)',
-    logo:    null, // drop logo to public/logos/merkle.svg then set: '/logos/merkle.svg'
+    logo:    '/logo/merkle.jpeg',
     desc:    'Designed scalable enterprise solutions while guiding executive stakeholders on investment priorities, platform choices, and delivery strategy.',
   },
   {
     period:  '2021 – 2024',
     role:    'Lead, Analytics',
     company: 'Merkle Indonesia (Part of Dentsu Group)',
-    logo:    null, // same: '/logos/merkle.svg'
+    logo:    '/logo/merkle.jpeg',
     desc:    'Combined partnership growth, client advisory, and analytics execution to secure 4 new logos, maintain ~85% YoY renewals, mentor 30+ team members, and deliver strong conversion improvements.',
   },
   {
     period:  '2019 – 2021',
     role:    'Analytics Specialist',
     company: 'iProspect Indonesia (Part of Dentsu Group)',
-    logo:    null, // drop logo to public/logos/iprospect.svg then set: '/logos/iprospect.svg'
+    logo:    '/logo/iprospect.png',
     desc:    'Managed strategic analytics delivery across enterprise accounts, achieving ~95% client retention, strengthening data integrity by 40%, and driving ROI gains through attribution and monetization improvements.',
   },
   {
     period:  '2017 – 2019',
-    role:    'Earlier Experience',
+    role:    'Earlier Experiences',
     company: 'Various Companies',
     logo:    null,
     desc:    'Built early career foundation across digital analytics, social media growth, and performance reporting, delivering multi-channel insights, GA implementations, and measurable audience acquisition gains.',
@@ -150,9 +150,9 @@ export default function App() {
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
-      <Nav />
+      <Nav name={name} role={role} />
       <main id="main-content">
-        <Hero name={name} initials={initials} role={role} tagline={tagline} />
+        <Hero name={name} role={role} tagline={tagline} />
         <About bio={bio} photo="/profile-photo.png" />{/* drop photo.jpg to public/ then set photo="/photo.jpg" */}
         <Experience jobs={jobs} />
         <Skills categories={skillCategories} />

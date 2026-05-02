@@ -1,21 +1,20 @@
-/* Done when: glass blur visible, 3 links scroll sections, hamburger on <768px */
 import { useState, useEffect, useRef, useCallback } from 'react'
 
-
 const links = [
-  { label: 'About',      href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills',     href: '#skills' },
-  { label: 'GitHub',     href: '#works' },
+  { label: 'About',        href: '#about' },
+  { label: 'Experience',   href: '#experience' },
+  { label: 'Skills',       href: '#skills' },
+  { label: 'GitHub',       href: '#works' },
   { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Contact',    href: '#contact' },
+  { label: 'Contact',      href: '#contact' },
 ]
 
-export default function Nav() {
-  const [open, setOpen] = useState(false)
-  const [scales, setScales] = useState(links.map(() => 1))
+export default function Nav({ name, role }) {
+  const [open, setOpen]         = useState(false)
+  const [scales, setScales]     = useState(links.map(() => 1))
   const [activeHref, setActiveHref] = useState('')
   const [progress, setProgress] = useState(0)
+  const [pastHero, setPastHero] = useState(false)
   const linkRefs = useRef([])
 
   const handleDockMove = useCallback((e) => {
@@ -23,7 +22,7 @@ export default function Nav() {
       linkRefs.current.map(el => {
         if (!el) return 1
         const rect = el.getBoundingClientRect()
-        const cx = rect.left + rect.width / 2
+        const cx   = rect.left + rect.width / 2
         const dist = Math.abs(e.clientX - cx)
         const range = 88
         if (dist > range) return 1
@@ -36,11 +35,12 @@ export default function Nav() {
     setScales(links.map(() => 1))
   }, [])
 
-  /* Scroll progress bar */
+  /* Scroll progress + past-hero detection (combined for one listener) */
   useEffect(() => {
     const onScroll = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight
       setProgress(max > 0 ? (window.scrollY / max) * 100 : 0)
+      setPastHero(window.scrollY > window.innerHeight * 0.85)
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -78,8 +78,24 @@ export default function Nav() {
     <header className="nav">
       <div className="nav__progress" style={{ width: `${progress}%` }} aria-hidden="true" />
       <div className="nav__inner">
+
+        {/* Brand: logo always visible; name+role fades in after hero */}
         <a href="#" className="nav__brand" aria-label="Back to top">
-          <img src="/favicon.svg" alt="Sandi Utomo" width="28" height="28" />
+          <img
+            className="nav__logo"
+            src="/initial-logo-liquid-glass-3.png"
+            alt="SU"
+            width="28"
+            height="28"
+          />
+          <span
+            className={`nav__identity${pastHero ? ' nav__identity--visible' : ''}`}
+            aria-hidden="true"
+          >
+            <span className="nav__identity-name">{name}</span>
+            <span className="nav__identity-sep" />
+            <span className="nav__identity-role">{role}</span>
+          </span>
         </a>
 
         {/* Desktop links — dock magnification */}
@@ -115,9 +131,9 @@ export default function Nav() {
             </svg>
           ) : (
             <svg width="20" height="14" viewBox="0 0 20 14" fill="currentColor" aria-hidden="true">
-              <rect y="0"    width="20" height="1.5" rx="0.75"/>
-              <rect y="6.25" width="20" height="1.5" rx="0.75"/>
-              <rect y="12.5" width="20" height="1.5" rx="0.75"/>
+              <rect y="0"     width="20" height="1.5" rx="0.75"/>
+              <rect y="6.25"  width="20" height="1.5" rx="0.75"/>
+              <rect y="12.5"  width="20" height="1.5" rx="0.75"/>
             </svg>
           )}
         </button>
