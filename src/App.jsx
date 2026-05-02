@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -10,12 +11,14 @@ import Footer from './components/Footer.jsx'
 
 const name     = 'Sandi Utomo'
 const initials = 'SU'
-const role     = 'Solutions Architect'
-const tagline  = 'I develop product and solutions that people actually want to use.'
+const role     = 'Analytics, Strategy & Solutions Leader'
+const tagline  = 'I bridge business, data, and technology to build solutions that matter.'
 
 const bio = [
-  'Solutions Architect based in Jakarta. I thrive at the intersection of Marketing, Data, and Technology.',
-  'I bring deep expertise in data-driven strategy, marketing technology, and scalable technical solutions, helping businesses turn complex challenges into practical & impactful outcomes; driving growth, efficiency, and long-term success.',
+  'Hi, I’m Sandi Utomo, a Solutions Architect based in Jakarta with experience turning business needs into practical, high-impact digital solutions.',
+  'I work at the intersection of product, data, and technology, helping organizations design scalable platforms, improve customer experiences, and make smarter decisions through analytics and modern architecture.',
+  'With a background spanning solution consulting, marketing technology, and analytics leadership, I bring both strategic thinking and hands-on execution to every project, driving growth, efficiency, and long-term value.',
+
 ]
 
 const email    = 'hi.sandiutomo@gmail.com'
@@ -51,33 +54,35 @@ const jobs = [
 
 const skillCategories = [
   {
-    label: 'Strategy & Architecture',
-    items: [
-      'Solution Architecture',
-      'Enterprise Solutions',
-      'Technology Strategy',
-      'Roadmapping',
-      'Stakeholder Management',
-    ],
-  },
-  {
-    label: 'Product & Growth',
+    label: 'Strategy & Growth',
     items: [
       'Product Strategy',
-      'Go-to-Market',
-      'Client Consulting',
-      'Business Growth',
-      'Pre-Sales',
+      'Business Consulting',
+      'Revenue Growth',
     ],
   },
   {
-    label: 'Analytics & Data',
+    label: 'Solutions & Delivery',
+    items: [
+      'Solution Architecture',
+      'Pre-Sales',
+      'Project Delivery',
+    ],
+  },
+  {
+    label: 'Data & Optimization',
     items: [
       'Digital Analytics',
-      'Data Analysis',
-      'Dashboarding',
-      'Data Visualization',
-      'Attribution',
+      'Conversion Optimization',
+      'Performance Measurement',
+    ],
+  },
+  {
+    label: 'Marketing Technology',
+    items: [
+      'Martech Platforms',
+      'Customer Data Strategy',
+      'Solution Implementation',
     ],
   },
 ]
@@ -89,6 +94,7 @@ const projects = [
     tags:  ['Martech', 'Mobile', 'Analytics'],
     link:  'https://github.com/sandiutomo/firebraze-ios-swift',
     year:  '2026',
+    image: null, // drop file to public/projects/firebraze.jpg then set: '/projects/firebraze.jpg'
   },
   {
     title: 'MarketApp | Analytics & Martech Sample App',
@@ -96,6 +102,7 @@ const projects = [
     tags:  ['Martech', 'Mobile', 'Analytics'],
     link:  'https://github.com/sandiutomo/marketapp-suite-android',
     year:  '2026',
+    image: null, // drop file to public/projects/marketapp.jpg then set: '/projects/marketapp.jpg'
   },
   {
     title: 'Marketing Mix Model Studio',
@@ -103,6 +110,7 @@ const projects = [
     tags:  ['Marketing Mix Modeling', 'Analytics', 'Dashboard'],
     link:  'https://github.com/sandiutomo/marketingmixmodeling-meridian-demo',
     year:  '2026',
+    image: null, // drop file to public/projects/mmm.jpg then set: '/projects/mmm.jpg'
   },
 ]
 
@@ -113,6 +121,7 @@ const caseStudies = [
     tags:  ['Strategy', 'Analytics'],
     link:  '#',
     year:  '20XX',
+    image: null, // drop file to public/cases/case1.jpg then set: '/cases/case1.jpg'
   },
   {
     title: 'Case Study Title',
@@ -120,17 +129,27 @@ const caseStudies = [
     tags:  ['Martech', 'Data'],
     link:  '#',
     year:  '20XX',
+    image: null, // drop file to public/cases/case2.jpg then set: '/cases/case2.jpg'
   },
 ]
 
 export default function App() {
+  useEffect(() => {
+    const els = document.querySelectorAll('section:not(.hero)')
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target) } })
+    }, { threshold: 0.06 })
+    els.forEach(el => { el.classList.add('reveal'); io.observe(el) })
+    return () => io.disconnect()
+  }, [])
+
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <Nav />
       <main id="main-content">
         <Hero name={name} initials={initials} role={role} tagline={tagline} />
-        <About bio={bio} />
+        <About bio={bio} photo="/profile-photo.png" />{/* drop photo.jpg to public/ then set photo="/photo.jpg" */}
         <Experience jobs={jobs} />
         <Skills categories={skillCategories} />
         <Works projects={projects} />

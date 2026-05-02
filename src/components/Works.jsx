@@ -1,15 +1,16 @@
-/* Done when: 3 project cards, 2-col ≥768px, hover lift, tags visible */
+import Carousel from './Carousel.jsx'
+
 export default function Works({ projects }) {
   return (
     <section id="works" className="works" aria-labelledby="works-heading">
       <div className="works__inner">
         <h2 id="works-heading" className="section-heading">GitHub Projects</h2>
-        <div className="works__carousel">
+        <Carousel className="works__carousel">
           {projects.map((p, i) => (
             <article key={i} className="project-card">
               {/* Image: replace with <img src={p.image} alt={p.title} loading="lazy" /> */}
               <div className="project-card__image" aria-hidden="true">
-                Project Image
+                {p.image && <img src={p.image} alt={p.title} loading="lazy" />}
               </div>
 
               <div className="project-card__body">
@@ -34,7 +35,7 @@ export default function Works({ projects }) {
               </div>
             </article>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   )

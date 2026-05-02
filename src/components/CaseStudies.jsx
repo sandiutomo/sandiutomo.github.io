@@ -1,13 +1,15 @@
+import Carousel from './Carousel.jsx'
+
 export default function CaseStudies({ studies }) {
   return (
     <section id="case-studies" className="case-studies" aria-labelledby="case-studies-heading">
       <div className="case-studies__inner">
         <h2 id="case-studies-heading" className="section-heading">Case Studies</h2>
-        <div className="case-studies__carousel">
+        <Carousel className="case-studies__carousel">
           {studies.map((s, i) => (
             <article key={i} className="project-card">
               <div className="project-card__image" aria-hidden="true">
-                Case Study Image
+                {s.image && <img src={s.image} alt={s.title} loading="lazy" />}
               </div>
               <div className="project-card__body">
                 {s.year && <p className="project-card__meta">{s.year}</p>}
@@ -29,7 +31,7 @@ export default function CaseStudies({ studies }) {
               </div>
             </article>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   )

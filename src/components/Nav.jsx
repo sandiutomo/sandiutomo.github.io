@@ -15,6 +15,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const [scales, setScales] = useState(links.map(() => 1))
   const [activeHref, setActiveHref] = useState('')
+  const [progress, setProgress] = useState(0)
   const linkRefs = useRef([])
 
   const handleDockMove = useCallback((e) => {
@@ -33,6 +34,16 @@ export default function Nav() {
 
   const handleDockLeave = useCallback(() => {
     setScales(links.map(() => 1))
+  }, [])
+
+  /* Scroll progress bar */
+  useEffect(() => {
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   /* Close mobile menu on resize to desktop */
@@ -65,6 +76,7 @@ export default function Nav() {
 
   return (
     <header className="nav">
+      <div className="nav__progress" style={{ width: `${progress}%` }} aria-hidden="true" />
       <div className="nav__inner">
         <a href="#" className="nav__brand" aria-label="Back to top">
           <img src="/favicon.svg" alt="Sandi Utomo" width="28" height="28" />
