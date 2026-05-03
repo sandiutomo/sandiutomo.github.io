@@ -1,8 +1,8 @@
 const CERT_PLACEHOLDERS = [
-  { label: 'Google Cloud Certified Generative AI Leader', issuer: 'Google Cloud · 2025', image: '/certs/generative-ai-leader-certification.png', link: 'https://www.credly.com/badges/3a461a52-8191-4b0d-92fb-ebf66d2164ee/public_url' },
-  { label: 'Braze Certified Technical Marketing Expert', issuer: 'Braze · 2025', image: '/certs/braze-certified-technical-marketing-expert.png', link: 'https://www.credly.com/badges/d4cd02c0-c841-4638-814c-ee6eafe25508/public_url' },
-  { label: 'Braze Certified Marketing Strategy Expert', issuer: 'Braze · 2025', image: '/certs/braze-marketing-strategy-expert.png', link: 'https://www.credly.com/badges/ffdd28d9-cdcb-46c8-8cb6-47f4d7f578bd/public_url' },
-  { label: 'View other certifications on Credly →', image: '/logo/Credly-by-Pearson-HQ-Logo.png' , link: 'https://www.credly.com/users/sandi-utomo', wallet: true },
+  { label: 'Google Cloud Certified Generative AI Leader', issuer: 'Google Cloud · 2025', image: '/certifications/generative-ai-leader-certification.png', link: 'https://www.credly.com/badges/3a461a52-8191-4b0d-92fb-ebf66d2164ee/public_url' },
+  { label: 'Braze Certified Technical Marketing Expert', issuer: 'Braze · 2025', image: '/certifications/braze-certified-technical-marketing-expert.png', link: 'https://www.credly.com/badges/d4cd02c0-c841-4638-814c-ee6eafe25508/public_url' },
+  { label: 'Braze Certified Marketing Strategy Expert', issuer: 'Braze · 2025', image: '/certifications/braze-marketing-strategy-expert.png', link: 'https://www.credly.com/badges/ffdd28d9-cdcb-46c8-8cb6-47f4d7f578bd/public_url' },
+  { label: 'View other certifications on Credly →', image: '/logo/credly-logo.webp' , link: 'https://www.credly.com/users/sandi-utomo', wallet: true },
   { label: 'View other certifications on Google Drive →', image: '/logo/google-drive-logo.webp' , link: 'https://drive.google.com/drive/folders/1O_fHG8cVSo-iaxTMWez4fA871nr0IsbT?usp=sharing', wallet: true },
 ]
 

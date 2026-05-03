@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import SuLogo from './SuLogo.jsx'
 
 const links = [
-  { label: 'About',        href: '#about' },
+  { label: 'About Me',     href: '#about' },
   { label: 'Experience',   href: '#experience' },
   { label: 'Skills',       href: '#skills' },
-  { label: 'GitHub',       href: '#works' },
+  { label: 'Projects',     href: '#works' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Contact',      href: '#contact' },
 ]
@@ -41,6 +42,7 @@ export default function Nav({ name, role }) {
       const max = document.documentElement.scrollHeight - window.innerHeight
       setProgress(max > 0 ? (window.scrollY / max) * 100 : 0)
       setPastHero(window.scrollY > window.innerHeight * 0.85)
+      if (max > 0 && window.scrollY >= max - 40) setActiveHref('#contact')
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -81,13 +83,7 @@ export default function Nav({ name, role }) {
 
         {/* Brand: logo always visible; name+role fades in after hero */}
         <a href="#" className="nav__brand" aria-label="Back to top">
-          <img
-            className="nav__logo"
-            src="/initial-logo-liquid-glass-3.png"
-            alt="SU"
-            width="28"
-            height="28"
-          />
+          <SuLogo size={28} />
           <span
             className={`nav__identity${pastHero ? ' nav__identity--visible' : ''}`}
             aria-hidden="true"
@@ -120,22 +116,24 @@ export default function Nav({ name, role }) {
 
         {/* Hamburger (mobile only) */}
         <button
-          className="nav__hamburger"
+          className={`nav__hamburger${open ? ' nav__hamburger--open' : ''}`}
           onClick={() => setOpen(v => !v)}
           aria-expanded={open}
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
-          {open ? (
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
-            </svg>
-          ) : (
-            <svg width="20" height="14" viewBox="0 0 20 14" fill="currentColor" aria-hidden="true">
-              <rect y="0"     width="20" height="1.5" rx="0.75"/>
-              <rect y="6.25"  width="20" height="1.5" rx="0.75"/>
-              <rect y="12.5"  width="20" height="1.5" rx="0.75"/>
-            </svg>
-          )}
+          <span className="nav__hamburger-icon" aria-hidden="true">
+            {open ? (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
+                <rect y="0"    width="18" height="1.5" rx="0.75"/>
+                <rect y="5.25" width="13" height="1.5" rx="0.75"/>
+                <rect y="10.5" width="18" height="1.5" rx="0.75"/>
+              </svg>
+            )}
+          </span>
         </button>
       </div>
 

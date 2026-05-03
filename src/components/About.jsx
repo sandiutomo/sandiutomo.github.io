@@ -7,24 +7,18 @@ export default function About({ bio, photo }) {
           <div className="about__photo-wrap">
             <div className="about__photo about__photo--blob" role="img" aria-label="Profile photo">
               {photo
-                ? <img src="/profile-photo.png" alt="Sandi Utomo" className="about__photo-img" />
+                ? <img src="/profile-side-portrait.webp" alt="Sandi Utomo" className="about__photo-img" />
                 : null}
             </div>
           </div>
-
           <div className="about__content">
-            <h2 id="about-heading" className="section-heading">About</h2>
+            <h2 id="about-heading" className="section-heading">About Me</h2>
             {bio.map((para, i) => (
               <p key={i} className="about__bio">{para}</p>
             ))}
-            <a
-  href="https://drive.google.com/file/d/13bsLz8qtZx0iOMk_QDzhXyopSnHtpEKE/view?usp=sharing"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="btn-pill-dark about__cv-btn"
->
-  Download CV
-</a>
+            <a href="https://drive.google.com/file/d/13bsLz8qtZx0iOMk_QDzhXyopSnHtpEKE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-pill-dark about__cv-btn">
+            Sandi Utomo's Resume
+          </a>
           </div>
         </div>
       </div>

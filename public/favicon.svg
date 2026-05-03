@@ -1,19 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#5AC8FA"/>
-      <stop offset="48%"  stop-color="#007AFF"/>
-      <stop offset="100%" stop-color="#5856D6"/>
+    <radialGradient id="bg" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#5AC8FA" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5856D6" stop-opacity="0.85"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.70)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.05)"/>
+    </linearGradient>
+    <linearGradient id="letter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#e0f0ff"/>
+      <stop offset="100%" stop-color="#c0d8ff"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#000"/>
-  <text
-    x="32" y="44"
-    font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
-    font-size="28"
-    font-weight="900"
-    letter-spacing="-1"
-    text-anchor="middle"
-    fill="url(#g)"
-  >SU</text>
+  <circle cx="60" cy="60" r="58" fill="rgba(10,10,20,0.92)"/>
+  <circle cx="60" cy="60" r="58" fill="url(#bg)"/>
+  <path d="M 5 60 A 55 55 0 0 1 115 60 L 115 32 A 55 55 0 0 0 5 32 Z" fill="rgba(255,255,255,0.12)"/>
+  <circle cx="60" cy="60" r="57" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+  <text x="60" y="76" text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif"
+    font-size="42" font-weight="800" letter-spacing="-2"
+    fill="url(#letter)">SU</text>
 </svg>

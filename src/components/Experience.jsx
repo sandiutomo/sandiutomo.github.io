@@ -2,7 +2,7 @@ export default function Experience({ jobs }) {
   return (
     <section id="experience" className="experience" aria-labelledby="experience-heading">
       <div className="experience__inner">
-        <h2 id="experience-heading" className="section-heading">Experience</h2>
+        <h2 id="experience-heading" className="section-heading">Work Experience</h2>
         <ol className="experience__list">
           {jobs.map((job, i) => (
             <li key={i} className="experience__item">

@@ -10,6 +10,13 @@ const GitHubIcon = () => (
   </svg>
 )
 
+const UpworkIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M16.5 7a4.5 4.5 0 0 0-4.12 2.7c-.9-1.08-1.6-2.33-2.05-3.7H7.7v6.15c0 1.2-.63 1.85-1.55 1.85s-1.55-.65-1.55-1.85V6H2v6.28C2 15.1 3.72 17 6.15 17s4.15-1.9 4.15-4.72v-.24c.45.58.96 1.12 1.54 1.58L11 18h2.5l.45-2.4c.77.28 1.63.4 2.55.4 3.1 0 5.5-2.05 5.5-4.95S19.6 7 16.5 7zm0 6.5c-1.1 0-2.02-.32-2.76-.84l.1-.54c.18-.95.52-1.78 1-2.37.47-.58 1.05-.85 1.82-.85 1.45 0 2.45.9 2.45 2.3 0 1.38-1 2.3-2.6 2.3z" />
+  </svg>
+
+)
+
 export default function Contact({ email, linkedin, github }) {
   return (
     <section id="contact" className="contact" aria-labelledby="contact-heading">
@@ -21,7 +28,13 @@ export default function Contact({ email, linkedin, github }) {
 
         <a href={`mailto:${email}`} className="contact__email">
           {email}
-          <span aria-hidden="true">→</span>
+          <svg
+            className="contact__plane"
+            width="16" height="16" viewBox="0 0 16 16"
+            fill="currentColor" aria-hidden="true"
+          >
+            <path d="M14.854 1.146a.5.5 0 0 0-.525-.116L.49 6.53a.5.5 0 0 0-.026.93L5 9.5l.5 4.5a.5.5 0 0 0 .906.212L8.5 11l4.5 2.5a.5.5 0 0 0 .724-.447l1-12a.5.5 0 0 0-.87-.907z"/>
+          </svg>
         </a>
 
         <div className="contact__social">
@@ -30,6 +43,9 @@ export default function Contact({ email, linkedin, github }) {
           </a>
           <a href={github} target="_blank" rel="noopener noreferrer" className="contact__social-link">
             <GitHubIcon /> GitHub
+          </a>
+          <a href="https://www.upwork.com/freelancers/~0137e3e0cbaaeb2a46?mp_source=share" target="_blank" rel="noopener noreferrer" className="contact__social-link">
+            <UpworkIcon /> Upwork
           </a>
         </div>
       </div>

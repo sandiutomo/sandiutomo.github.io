@@ -4,7 +4,7 @@ export default function Works({ projects }) {
   return (
     <section id="works" className="works" aria-labelledby="works-heading">
       <div className="works__inner">
-        <h2 id="works-heading" className="section-heading">GitHub Projects</h2>
+        <h2 id="works-heading" className="section-heading">Projects & Portfolio</h2>
         <Carousel className="works__carousel">
           {projects.map((p, i) => (
             <article key={i} className="project-card">
